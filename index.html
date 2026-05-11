@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STUDIO — AI Image Studio</title>
+  <meta name="description" content="AI-generated product shots, posters, and brand visuals. Web development.">
+  <meta property="og:title" content="STUDIO — AI Image Studio">
+  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ─── Full-Page Star Canvas ─── -->
+  <canvas id="stars"></canvas>
+
+  <!-- ─── Navigation ─── -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">STUDIO</a>
+      <ul class="nav-links">
+        <li><a href="#gallery">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#web-projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Get a Quote</a>
+      <button class="nav-burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu">
+      <a href="#gallery">Work</a>
+      <a href="#services">Services</a>
+      <a href="#web-projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="mobile-cta">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <section id="hero">
+    <div class="hero-content">
+      <span class="hero-label">AI IMAGE STUDIO</span>
+      <h1 class="hero-h1">Crafted to Look<br>Indistinguishable.</h1>
+      <p class="hero-sub">AI-generated product shots, posters &amp; visuals<br>built for brands that want more.</p>
+      <a href="#gallery" class="hero-btn">Explore Gallery</a>
+      <div class="scroll-hint">↓</div>
+    </div>
+  </section>
+
+  <!-- ─── Gallery ─── -->
+  <section id="gallery" class="reveal">
+    <div class="gallery-header">
+      <span class="section-label">WORK</span>
+      <p class="gallery-disclaimer">All images and models are AI-generated; none of them are real or based on real individuals.</p>
+    </div>
+    <div class="gallery-grid">
+      <!-- Local Images -->
+      <div class="gallery-card loading">
+        <img src="img/dhruv_01.webp" alt="Editorial portrait" width="800" height="1200" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Editorial</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/mia_01.webp" alt="Fashion editorial" width="800" height="1200" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Fashion</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_01.webp" alt="Creative visual" width="800" height="1000" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Creative</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/dhruv_02.webp" alt="Street style" width="800" height="1400" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Portrait</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/mia_04.webp" alt="Studio shot" width="800" height="1100" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Studio</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_02.webp" alt="Product concept" width="800" height="800" loading="eager">
+        <div class="card-overlay"><span class="card-tag">Product</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_03.webp" alt="Abstract render" width="800" height="1200" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Abstract</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_04.webp" alt="Poster design" width="800" height="1100" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Poster</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_05.webp" alt="Fashion concept" width="800" height="1000" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Fashion</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_06.webp" alt="Cinematic shot" width="800" height="1200" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Cinematic</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_07.webp" alt="Modern aesthetic" width="800" height="900" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Modern</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_08.webp" alt="Digital art" width="800" height="1100" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Digital Art</span></div>
+      </div>
+      <div class="gallery-card loading">
+        <img src="img/pint_09.webp" alt="Brand visual" width="800" height="700" loading="lazy">
+        <div class="card-overlay"><span class="card-tag">Branding</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Banner ─── -->
+  <section id="cta-banner" class="reveal">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-text">
+        <h2>Ready to elevate your brand?</h2>
+        <p>Let's create visuals that make your audience stop scrolling.</p>
+      </div>
+      <a href="#contact" class="cta-banner-btn">
+        <span>Get a Quote</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── Services ─── -->
+  <section id="services" class="reveal">
+    <div class="services-inner">
+      <span class="section-label">SERVICES</span>
+      <h2 class="services-heading">What I Bring to the Table</h2>
+      <div class="services-grid">
+
+        <div class="service-card service-primary">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/>
+              </svg>
+            </div>
+            <span class="service-badge">Most Popular</span>
+          </div>
+          <h3>AI Image Generation</h3>
+          <p>Hyper-realistic product shots, lifestyle images, and creative visuals — no studio, no photographer, delivered in 24–48 hours.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Product photography
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Lifestyle & editorial
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited revisions
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="img/pint_01.webp" alt="AI generation preview" loading="lazy">
+            <img src="img/mia_01.webp" alt="AI generation preview" loading="lazy">
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 3H8L6 7h12z"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Poster &amp; Brand Visuals</h3>
+          <p>Event posters, social media creatives, and brand identity visuals that stop the scroll.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Social media creatives
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Event & launch posters
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Brand identity kits
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="img/pint_04.webp" alt="Poster preview" loading="lazy">
+            <img src="img/pint_05.webp" alt="Brand visual preview" loading="lazy">
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Website Development</h3>
+          <p>Fast, modern websites built with clean code. From landing pages to full product sites.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Responsive design
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              SEO optimized
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Lightning fast
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="assets/resort-lake-view.jpg" alt="Web dev preview" loading="lazy">
+            <img src="assets/excellence-academy.jpg" alt="Web dev preview" loading="lazy">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Web Projects Showcase ─── -->
+  <section id="web-projects" class="reveal">
+    <div class="projects-inner">
+      <span class="section-label">WEB PROJECTS</span>
+      <h2 class="projects-heading">Websites I've Built</h2>
+      <div class="projects-grid">
+
+        <a href="#" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/resort-lake-view.jpg" alt="Resort Lake View — luxury resort website" width="1024" height="500" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">01</span>
+            <h3>Resort Lake View</h3>
+            <p>Luxury resort website with booking system, weather widget, and immersive full-screen gallery.</p>
+            <div class="project-tags">
+              <span>Hospitality</span>
+              <span>Booking</span>
+              <span>Full-Stack</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/excellence-academy.jpg" alt="Excellence Academy — coaching institute website" width="1024" height="500" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">02</span>
+            <h3>Excellence Academy</h3>
+            <p>Coaching institute website for NEET & JEE prep with course listings, faculty profiles, and results showcase.</p>
+            <div class="project-tags">
+              <span>Education</span>
+              <span>Lead Gen</span>
+              <span>Responsive</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/muscle-warrior.jpg" alt="Muscle Warrior Gym — fitness website" width="1024" height="500" loading="lazy">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">03</span>
+            <h3>Muscle Warrior Gym</h3>
+            <p>Bold fitness brand site with WhatsApp integration, pricing plans, and dynamic gallery.</p>
+            <div class="project-tags">
+              <span>Fitness</span>
+              <span>Branding</span>
+              <span>WhatsApp API</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ─── -->
+  <section id="contact" class="reveal">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <span class="section-label">CONTACT</span>
+        <h2 class="contact-h2">Let's build<br>something real.</h2>
+        <p class="contact-sub">Tell me what you need — I'll tell you what's possible.</p>
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-info-label">Email</span>
+              <a href="mailto:hello@yourstudio.com" class="contact-info-value">hello@yourstudio.com</a>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <div>
+              <span class="contact-info-label">Instagram</span>
+              <a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener" class="contact-info-value">@YOURHANDLE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-service">Service</label>
+            <select id="contact-service" name="service">
+              <option value="" disabled selected>What do you need?</option>
+              <option value="ai-images">AI Image Generation</option>
+              <option value="posters">Poster & Brand Visuals</option>
+              <option value="website">Website Development</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="contact-submit">
+            <span>Send Message</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="footer-inner">
+      <span>© 2025 Your Studio Name</span>
+      <div class="footer-links">
+        <a href="https://instagram.com/YOURHANDLE" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://behance.net/YOURHANDLE" target="_blank" rel="noopener">Behance</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
