@@ -3,6 +3,7 @@
   const canvas = document.getElementById('stars');
   const ctx = canvas.getContext('2d');
   let frame;
+  const isMobile = window.innerWidth < 768;
 
   function resize() {
     canvas.width  = window.innerWidth;
@@ -11,8 +12,9 @@
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  // ── Stars (faster movement) ──
-  const stars = Array.from({ length: 300 }, () => ({
+  // ── Stars — reduce count on mobile for performance ──
+  const STAR_COUNT = isMobile ? 100 : 300;
+  const stars = Array.from({ length: STAR_COUNT }, () => ({
     x:  Math.random() * canvas.width,
     y:  Math.random() * canvas.height,
     r:  Math.random() * 1.4 + 0.2,
@@ -28,11 +30,10 @@
   function spawnShootingStar() {
     const startX = Math.random() * canvas.width * 0.8;
     const startY = Math.random() * canvas.height * 0.4;
-    const angle = (Math.random() * 30 + 15) * (Math.PI / 180); // 15-45 degree angle
-    const speed = Math.random() * 6 + 8; // 8-14px per frame
+    const angle = (Math.random() * 30 + 15) * (Math.PI / 180);
+    const speed = Math.random() * 6 + 8;
     shootingStars.push({
-      x: startX,
-      y: startY,
+      x: startX, y: startY,
       vx: Math.cos(angle) * speed,
       vy: Math.sin(angle) * speed,
       life: 1.0,
@@ -42,42 +43,43 @@
     });
   }
 
-  // Spawn a shooting star every 2-5 seconds
+  // Spawn a shooting star every 3-6 seconds (less frequent on mobile)
+  const spawnInterval = isMobile ? 6000 : 3000;
   setInterval(() => {
-    if (shootingStars.length < 3) spawnShootingStar();
-  }, Math.random() * 3000 + 2000);
-  // Initial shooting star after 1s
-  setTimeout(spawnShootingStar, 1000);
+    if (shootingStars.length < (isMobile ? 1 : 3)) spawnShootingStar();
+  }, Math.random() * spawnInterval + 2000);
+  setTimeout(spawnShootingStar, 1500);
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // ── Milky Way — prominent diagonal band ──
-    const milkyWay = ctx.createLinearGradient(
-      0, canvas.height * 0.15,
-      canvas.width, canvas.height * 0.85
-    );
-    milkyWay.addColorStop(0,    'rgba(255,255,255,0)');
-    milkyWay.addColorStop(0.25, 'rgba(180,200,255,0.015)');
-    milkyWay.addColorStop(0.4,  'rgba(160,190,255,0.045)');
-    milkyWay.addColorStop(0.5,  'rgba(200,215,255,0.06)');
-    milkyWay.addColorStop(0.6,  'rgba(160,190,255,0.045)');
-    milkyWay.addColorStop(0.75, 'rgba(180,200,255,0.015)');
-    milkyWay.addColorStop(1,    'rgba(255,255,255,0)');
-    ctx.fillStyle = milkyWay;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // ── Milky Way — skip on mobile for perf ──
+    if (!isMobile) {
+      const milkyWay = ctx.createLinearGradient(
+        0, canvas.height * 0.15,
+        canvas.width, canvas.height * 0.85
+      );
+      milkyWay.addColorStop(0,    'rgba(255,255,255,0)');
+      milkyWay.addColorStop(0.25, 'rgba(180,200,255,0.015)');
+      milkyWay.addColorStop(0.4,  'rgba(160,190,255,0.045)');
+      milkyWay.addColorStop(0.5,  'rgba(200,215,255,0.06)');
+      milkyWay.addColorStop(0.6,  'rgba(160,190,255,0.045)');
+      milkyWay.addColorStop(0.75, 'rgba(180,200,255,0.015)');
+      milkyWay.addColorStop(1,    'rgba(255,255,255,0)');
+      ctx.fillStyle = milkyWay;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Second pass — inner glow of the milky way
-    ctx.save();
-    ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
-    ctx.rotate(-0.45); // ~25 degrees diagonal
-    const innerGlow = ctx.createRadialGradient(0, 0, 0, 0, 0, canvas.width * 0.5);
-    innerGlow.addColorStop(0, 'rgba(168,200,255,0.04)');
-    innerGlow.addColorStop(0.4, 'rgba(140,180,255,0.02)');
-    innerGlow.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = innerGlow;
-    ctx.fillRect(-canvas.width, -canvas.height * 0.15, canvas.width * 2, canvas.height * 0.3);
-    ctx.restore();
+      ctx.save();
+      ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
+      ctx.rotate(-0.45);
+      const innerGlow = ctx.createRadialGradient(0, 0, 0, 0, 0, canvas.width * 0.5);
+      innerGlow.addColorStop(0, 'rgba(168,200,255,0.04)');
+      innerGlow.addColorStop(0.4, 'rgba(140,180,255,0.02)');
+      innerGlow.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = innerGlow;
+      ctx.fillRect(-canvas.width, -canvas.height * 0.15, canvas.width * 2, canvas.height * 0.3);
+      ctx.restore();
+    }
 
     // ── Draw Stars ──
     stars.forEach(s => {
@@ -100,10 +102,9 @@
     // ── Draw Shooting Stars ──
     for (let i = shootingStars.length - 1; i >= 0; i--) {
       const ss = shootingStars[i];
-
-      // Trail
-      const tailX = ss.x - (ss.vx / Math.sqrt(ss.vx * ss.vx + ss.vy * ss.vy)) * ss.length;
-      const tailY = ss.y - (ss.vy / Math.sqrt(ss.vx * ss.vx + ss.vy * ss.vy)) * ss.length;
+      const mag = Math.sqrt(ss.vx * ss.vx + ss.vy * ss.vy);
+      const tailX = ss.x - (ss.vx / mag) * ss.length;
+      const tailY = ss.y - (ss.vy / mag) * ss.length;
 
       const trail = ctx.createLinearGradient(tailX, tailY, ss.x, ss.y);
       trail.addColorStop(0, `rgba(255,255,255,0)`);
@@ -118,18 +119,15 @@
       ctx.lineCap = 'round';
       ctx.stroke();
 
-      // Bright head glow
       ctx.beginPath();
       ctx.arc(ss.x, ss.y, ss.width + 1, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,255,255,${ss.life * 0.8})`;
       ctx.fill();
 
-      // Update position
       ss.x += ss.vx;
       ss.y += ss.vy;
       ss.life -= ss.decay;
 
-      // Remove dead shooting stars
       if (ss.life <= 0 || ss.x > canvas.width + 100 || ss.y > canvas.height + 100) {
         shootingStars.splice(i, 1);
       }
@@ -162,12 +160,18 @@ mobileMenu.querySelectorAll('a').forEach(link => {
 });
 
 // ─── Gallery Image Loading & Skeleton ───
-document.querySelectorAll('.gallery-card img').forEach(img => {
-  if (img.complete) {
-    img.parentElement.classList.remove('loading');
+document.querySelectorAll('.gallery-card').forEach(card => {
+  const img = card.querySelector('img');
+  function onLoaded() {
+    card.classList.remove('loading');
+    card.classList.add('loaded');
+  }
+  if (img.complete && img.naturalHeight > 0) {
+    onLoaded();
   } else {
-    img.addEventListener('load', () => {
-      img.parentElement.classList.remove('loading');
+    img.addEventListener('load', onLoaded);
+    img.addEventListener('error', () => {
+      card.classList.remove('loading');
     });
   }
 });
@@ -219,6 +223,22 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowLeft')  navigate(-1);
   if (e.key === 'ArrowRight') navigate(1);
 });
+
+// ─── Touch Swipe for Lightbox (mobile) ───
+let touchStartX = 0;
+let touchStartY = 0;
+lb.addEventListener('touchstart', e => {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+lb.addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  const dy = e.changedTouches[0].screenY - touchStartY;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+    if (dx < 0) navigate(1);
+    else navigate(-1);
+  }
+}, { passive: true });
 
 // ─── Scroll Reveal ───
 const revealObserver = new IntersectionObserver((entries) => {

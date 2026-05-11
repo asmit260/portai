@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>STUDIO — AI Image Studio</title>
   <meta name="description" content="AI-generated product shots, posters, and brand visuals. Web development.">
   <meta property="og:title" content="STUDIO — AI Image Studio">
   <meta property="og:image" content="https://picsum.photos/1200/630">
+  <!-- Preconnect to Google Fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -56,57 +61,58 @@
       <p class="gallery-disclaimer">All images and models are AI-generated; none of them are real or based on real individuals.</p>
     </div>
     <div class="gallery-grid">
-      <!-- Local Images -->
+      <!-- First 3 images: eager load (above the fold) -->
       <div class="gallery-card loading">
-        <img src="img/dhruv_01.webp" alt="Editorial portrait" width="800" height="1200" loading="eager">
+        <img src="img/dhruv_01.webp" alt="Editorial portrait" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
         <div class="card-overlay"><span class="card-tag">Editorial</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/mia_01.webp" alt="Fashion editorial" width="800" height="1200" loading="eager">
+        <img src="img/mia_01.webp" alt="Fashion editorial" width="800" height="1200" loading="eager" decoding="async" fetchpriority="high">
         <div class="card-overlay"><span class="card-tag">Fashion</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_01.webp" alt="Creative visual" width="800" height="1000" loading="eager">
+        <img src="img/pint_01.webp" alt="Creative visual" width="800" height="1000" loading="eager" decoding="async">
         <div class="card-overlay"><span class="card-tag">Creative</span></div>
       </div>
+      <!-- Remaining images: lazy load -->
       <div class="gallery-card loading">
-        <img src="img/dhruv_02.webp" alt="Street style" width="800" height="1400" loading="eager">
+        <img src="img/dhruv_02.webp" alt="Street style" width="800" height="1400" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Portrait</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/mia_04.webp" alt="Studio shot" width="800" height="1100" loading="eager">
+        <img src="img/mia_04.webp" alt="Studio shot" width="800" height="1100" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Studio</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_02.webp" alt="Product concept" width="800" height="800" loading="eager">
+        <img src="img/pint_02.webp" alt="Product concept" width="800" height="800" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Product</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_03.webp" alt="Abstract render" width="800" height="1200" loading="lazy">
+        <img src="img/pint_03.webp" alt="Abstract render" width="800" height="1200" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Abstract</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_04.webp" alt="Poster design" width="800" height="1100" loading="lazy">
+        <img src="img/pint_04.webp" alt="Poster design" width="800" height="1100" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Poster</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_05.webp" alt="Fashion concept" width="800" height="1000" loading="lazy">
+        <img src="img/pint_05.webp" alt="Fashion concept" width="800" height="1000" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Fashion</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_06.webp" alt="Cinematic shot" width="800" height="1200" loading="lazy">
+        <img src="img/pint_06.webp" alt="Cinematic shot" width="800" height="1200" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Cinematic</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_07.webp" alt="Modern aesthetic" width="800" height="900" loading="lazy">
+        <img src="img/pint_07.webp" alt="Modern aesthetic" width="800" height="900" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Modern</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_08.webp" alt="Digital art" width="800" height="1100" loading="lazy">
+        <img src="img/pint_08.webp" alt="Digital art" width="800" height="1100" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Digital Art</span></div>
       </div>
       <div class="gallery-card loading">
-        <img src="img/pint_09.webp" alt="Brand visual" width="800" height="700" loading="lazy">
+        <img src="img/pint_09.webp" alt="Brand visual" width="800" height="700" loading="lazy" decoding="async">
         <div class="card-overlay"><span class="card-tag">Branding</span></div>
       </div>
     </div>
@@ -160,8 +166,8 @@
             </li>
           </ul>
           <div class="service-preview">
-            <img src="img/pint_01.webp" alt="AI generation preview" loading="lazy">
-            <img src="img/mia_01.webp" alt="AI generation preview" loading="lazy">
+            <img src="img/pint_01.webp" alt="AI generation preview" loading="lazy" decoding="async">
+            <img src="img/mia_01.webp" alt="AI generation preview" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -192,8 +198,8 @@
             </li>
           </ul>
           <div class="service-preview">
-            <img src="img/pint_04.webp" alt="Poster preview" loading="lazy">
-            <img src="img/pint_05.webp" alt="Brand visual preview" loading="lazy">
+            <img src="img/pint_04.webp" alt="Poster preview" loading="lazy" decoding="async">
+            <img src="img/pint_05.webp" alt="Brand visual preview" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -224,8 +230,8 @@
             </li>
           </ul>
           <div class="service-preview">
-            <img src="assets/resort-lake-view.jpg" alt="Web dev preview" loading="lazy">
-            <img src="assets/excellence-academy.jpg" alt="Web dev preview" loading="lazy">
+            <img src="assets/resort-lake-view.jpg" alt="Web dev preview" loading="lazy" decoding="async">
+            <img src="assets/excellence-academy.jpg" alt="Web dev preview" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -242,7 +248,7 @@
 
         <a href="#" class="project-card" target="_blank" rel="noopener">
           <div class="project-thumb">
-            <img src="assets/resort-lake-view.jpg" alt="Resort Lake View — luxury resort website" width="1024" height="500" loading="lazy">
+            <img src="assets/resort-lake-view.jpg" alt="Resort Lake View — luxury resort website" width="1024" height="500" loading="lazy" decoding="async">
             <div class="project-thumb-overlay">
               <span class="project-view-btn">View Project →</span>
             </div>
@@ -261,7 +267,7 @@
 
         <a href="#" class="project-card" target="_blank" rel="noopener">
           <div class="project-thumb">
-            <img src="assets/excellence-academy.jpg" alt="Excellence Academy — coaching institute website" width="1024" height="500" loading="lazy">
+            <img src="assets/excellence-academy.jpg" alt="Excellence Academy — coaching institute website" width="1024" height="500" loading="lazy" decoding="async">
             <div class="project-thumb-overlay">
               <span class="project-view-btn">View Project →</span>
             </div>
@@ -280,7 +286,7 @@
 
         <a href="#" class="project-card" target="_blank" rel="noopener">
           <div class="project-thumb">
-            <img src="assets/muscle-warrior.jpg" alt="Muscle Warrior Gym — fitness website" width="1024" height="500" loading="lazy">
+            <img src="assets/muscle-warrior.jpg" alt="Muscle Warrior Gym — fitness website" width="1024" height="500" loading="lazy" decoding="async">
             <div class="project-thumb-overlay">
               <span class="project-view-btn">View Project →</span>
             </div>
