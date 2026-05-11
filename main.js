@@ -275,7 +275,7 @@ if (contactForm) {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nService: ${service || 'Not specified'}\n\n${message}`
     );
-    window.location.href = `mailto:hello@yourstudio.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@fxlstudio.com?subject=${subject}&body=${body}`;
 
     const btn = document.getElementById('contact-submit');
     btn.querySelector('span').textContent = 'Opening Mail App…';
