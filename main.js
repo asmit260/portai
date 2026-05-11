@@ -154,9 +154,18 @@ window.addEventListener('scroll', () => {
 // ─── Mobile Menu Toggle ───
 const burger = document.querySelector('.nav-burger');
 const mobileMenu = document.querySelector('.mobile-menu');
-burger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+const nav = document.getElementById('nav');
+
+function toggleMenu() {
+  const isOpen = mobileMenu.classList.toggle('open');
+  burger.classList.toggle('open', isOpen);
+  nav.classList.toggle('menu-open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+
+burger.addEventListener('click', toggleMenu);
 mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  link.addEventListener('click', toggleMenu);
 });
 
 // ─── Gallery Image Loading & Skeleton ───
