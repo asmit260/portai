@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>FXL STUDIO — Next-Gen Visual Studio</title>
-  <meta name="description" content="Hyper-realistic product shots, posters, and brand visuals. Web development.">
-  <meta property="og:title" content="FXL STUDIO — Next-Gen Visual Studio">
-  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <title>Asmit Rawat — Vibecoder & AI Developer</title>
+  <meta name="description" content="Solo portfolio of Asmit Rawat from Dehradun. BCA '26 graduate specializing in Vibecoding, prompt engineering, full-stack web apps, and AI product photography.">
+  <meta property="og:title" content="Asmit Rawat — Vibecoder & AI Developer">
+  <meta property="og:description" content="Solo portfolio of Asmit Rawat from Dehradun. BCA '26 graduate specializing in Vibecoding, prompt engineering, full-stack web apps, and AI product photography.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/spolore.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Asmit Rawat — Vibecoder & AI Developer">
+  <meta name="twitter:description" content="Building real web apps and AI visuals 10x faster with Vibecoding.">
+  <meta name="twitter:image" content="assets/spolore.webp">
   <!-- Preconnect to Google Fonts for faster font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,45 +25,259 @@
   <!-- ─── Full-Page Star Canvas ─── -->
   <canvas id="stars"></canvas>
 
-  <!-- ─── Navigation ─── -->
+    <!-- ─── Navigation ─── -->
   <nav id="nav">
     <div class="nav-inner">
-      <a class="nav-logo" href="#">FXL STUDIO</a>
+      <a class="nav-logo" href="#">ASMIT RAWAT</a>
       <ul class="nav-links">
-        <li><a href="#gallery">Work</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#web-projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Work</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="nav-cta" href="#contact">Get a Quote</a>
+      <a class="nav-cta" href="#contact">Let's Talk</a>
       <button class="nav-burger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
   <div class="mobile-menu">
-    <a href="#gallery">Work</a>
-    <a href="#services">Services</a>
     <a href="#web-projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Work</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="mobile-cta">Get a Quote</a>
+    <a href="#contact" class="mobile-cta">Let's Talk</a>
   </div>
 
-  <!-- ─── Hero ─── -->
+
+    <!-- ─── Hero ─── -->
   <section id="hero">
     <div class="hero-content">
-      <span class="hero-label">FXL STUDIO • WEB DEVELOPMENT</span>
-      <h1 class="hero-h1">Crafted to Look<br>Indistinguishable.</h1>
-      <p class="hero-sub">Next-gen product shots, posters &amp; visuals<br>built for brands that want more.</p>
-      <a href="#gallery" class="hero-btn">Explore Gallery</a>
+      <span class="hero-label">DEHRADUN, INDIA • BCA '26 • SOLO DEVELOPER</span>
+      <h1 class="hero-h1">I Build Real Apps &<br>AI Visuals at Light Speed.</h1>
+      <p class="hero-sub">Specializing in <strong>Vibecoding</strong> and advanced prompt engineering.<br>From full-stack web products to hyper-realistic e-commerce imagery—built 10x faster.</p>
+      <a href="#web-projects" class="hero-btn">See What I've Built</a>
       <div class="scroll-hint">↓</div>
     </div>
   </section>
 
-  <!-- ─── Gallery ─── -->
+
+    <!-- ─── Web Projects Showcase ─── -->
+  <section id="web-projects" class="reveal">
+    <div class="projects-inner">
+      <span class="section-label">VIBECODING IN ACTION</span>
+      <h2 class="projects-heading">Websites & SaaS I've Built</h2>
+      <p class="section-sub">Why take months to launch? By combining computer science fundamentals with modern <strong>Vibecoding</strong> and AI orchestration, I turn complex requirements into live, high-performance web applications in record time. Here are three recent projects built with this exact workflow:</p>
+      <div class="projects-grid">
+
+        <a href="https://spolore.vercel.app/" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/spolore.webp" alt="Spolore — local discovery app for Dehradun" width="1024" height="500" loading="lazy" decoding="async">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">01</span>
+            <h3>Spolore</h3>
+            <p>A local discovery app for Dehradun featuring an interactive map to find hidden cafes, cool spots, and local favorites. Save spots to personal bucket lists and submit new spots to earn points on a community leaderboard.</p>
+            <div class="project-tags">
+              <span>Interactive Map</span>
+              <span>Discovery</span>
+              <span>Gamified</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://mailblast-three.vercel.app/" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/mailblast.webp" alt="MailBlast — open-source bulk email sender" width="1024" height="500" loading="lazy" decoding="async">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">02</span>
+            <h3>MailBlast</h3>
+            <p>A free, open-source bulk email sender running on custom SMTP credentials. Personalize with template tags and send campaigns in throttled batches, re-architected to run synchronously via frontend-driven API calls to bypass Vercel serverless limits.</p>
+            <div class="project-tags">
+              <span>Email SaaS</span>
+              <span>Open Source</span>
+              <span>SMTP Sender</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.urbangorilla.in/" class="project-card" target="_blank" rel="noopener">
+          <div class="project-thumb">
+            <img src="assets/urbango.webp" alt="Urban Gorilla — Shopify storefront" width="1024" height="500" loading="lazy" decoding="async">
+            <div class="project-thumb-overlay">
+              <span class="project-view-btn">View Project →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-number">03</span>
+            <h3>Urban Gorilla</h3>
+            <p>A premium Shopify storefront selling iPhone cases and MagSafe accessories. Organized dynamically by model with reviews, standard e-commerce cart flow, and a dedicated buying guide blog named "The Drop".</p>
+            <div class="project-tags">
+              <span>Shopify</span>
+              <span>E-Commerce</span>
+              <span>Storefront</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ─── CTA Banner ─── -->
+  <section id="cta-banner" class="reveal">
+    <div class="cta-banner-inner">
+      <div class="cta-banner-text">
+        <h2>Have an idea you want to launch 10x faster?</h2>
+        <p>Let's use Vibecoding and AI to turn your vision into a live product in days, not months.</p>
+      </div>
+      <a href="#contact" class="cta-banner-btn">
+        <span>Let's Talk</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+
+    <!-- ─── Services ─── -->
+  <section id="services" class="reveal">
+    <div class="services-inner">
+      <span class="section-label">HOW I CAN HELP YOU</span>
+      <h2 class="services-heading">My Superpowers &amp; Workflow</h2>
+      <p class="section-sub">As a solo developer from Dehradun (BCA '26), I bridge the gap between engineering and AI. Why hire an expensive, slow agency when you can work directly with someone who uses modern AI tools to deliver production-grade results at lightning speed?</p>
+      <div class="tech-stack-container" style="margin-bottom: var(--space-xl); padding: var(--space-md); background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: var(--radius-md);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 12px;">Tech Stack &amp; AI Tools I Direct</span>
+        <div class="project-tags" style="gap: 8px;">
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Claude Code</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Cursor</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">v0 / Windsurf</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Next.js / React</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">JavaScript / TS</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Node.js &amp; APIs</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Shopify Storefronts</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Prompt Engineering</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Midjourney / FLUX</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Fal.ai / Generative AI</span>
+          <span style="font-size: 0.75rem; padding: 6px 14px;">Git / GitHub</span>
+        </div>
+      </div>
+      <div class="services-grid">
+
+        <div class="service-card service-primary">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/>
+              </svg>
+            </div>
+            <span class="service-badge">Core Expertise</span>
+          </div>
+          <h3>Vibecoding &amp; Web Development</h3>
+          <p>I build custom web applications, SaaS MVPs, and responsive storefronts in a fraction of the traditional time. By directing AI coding agents with precise engineering prompts, I ship clean, SEO-optimized, bug-free code fast.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              10x faster MVP launches
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Modern interactive UIs
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Zero agency overhead
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="assets/spolore.webp" alt="Web dev preview" loading="lazy" decoding="async">
+            <img src="assets/urbango.webp" alt="Web dev preview" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="7" width="20" height="14" rx="2"/>
+                <path d="M16 3H8L6 7h12z"/>
+              </svg>
+            </div>
+          </div>
+          <h3>AI Product Photography &amp; Visuals</h3>
+          <p>Need studio-quality photos for your Shopify store or brand without hiring a photography crew? Using advanced prompt engineering and generative models, I create ultra-realistic, indistinguishable product shots and commercial visuals.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              E-commerce product mockups
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Brand posters &amp; ad creatives
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Indistinguishable realism
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="img/pint_04.webp" alt="Poster preview" loading="lazy" decoding="async">
+            <img src="img/pint_05.webp" alt="Brand visual preview" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-glow"></div>
+          <div class="service-header">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Prompt Engineering &amp; Automation</h3>
+          <p>I design custom AI workflows and automation systems that eliminate manual grunt work. Whether you need an intelligent email dispatcher like MailBlast or automated data pipelines, I build tools that save you hours every week.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom AI prompt systems
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Workflow automation
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Bespoke internal SaaS
+            </li>
+          </ul>
+          <div class="service-preview">
+            <img src="assets/mailblast.webp" alt="Automation preview" loading="lazy" decoding="async">
+            <img src="assets/spolore.webp" alt="Automation preview" loading="lazy" decoding="async">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+    <!-- ─── Gallery ─── -->
   <section id="gallery" class="reveal">
     <div class="gallery-header">
-      <span class="section-label">WORK</span>
+      <span class="section-label">AI VISUALS &amp; PRODUCT SHOTS</span>
+      <h2 class="projects-heading" style="margin-bottom: var(--space-sm);">Real-Looking Images Made with AI</h2>
+      <p class="section-sub">Using deep prompt engineering, I generate studio-grade product mockups, editorial portraits, and commercial posters that look 100% real—saving brands thousands on physical photo shoots.</p>
     </div>
     <div class="gallery-grid">
       <!-- First 3 images: eager load (above the fold) -->
@@ -117,231 +337,14 @@
     </div>
   </section>
 
-  <!-- ─── CTA Banner ─── -->
-  <section id="cta-banner" class="reveal">
-    <div class="cta-banner-inner">
-      <div class="cta-banner-text">
-        <h2>Ready to elevate your brand?</h2>
-        <p>Let's create visuals that make your audience stop scrolling.</p>
-      </div>
-      <a href="#contact" class="cta-banner-btn">
-        <span>Get a Quote</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-    </div>
-  </section>
 
-  <!-- ─── Services ─── -->
-  <section id="services" class="reveal">
-    <div class="services-inner">
-      <span class="section-label">SERVICES</span>
-      <h2 class="services-heading">What I Bring to the Table</h2>
-      <div class="services-grid">
-
-        <div class="service-card service-primary">
-          <div class="service-card-glow"></div>
-          <div class="service-header">
-            <div class="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17 5.8 21.3l2.4-7.4L2 9.4h7.6z"/>
-              </svg>
-            </div>
-            <span class="service-badge">Most Popular</span>
-          </div>
-          <h3>High-Fidelity Visuals</h3>
-          <p>Hyper-realistic product shots, lifestyle images, and creative concepts — delivered with precision in 24–48 hours.</p>
-          <ul class="service-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Product photography
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Lifestyle & editorial
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Unlimited revisions
-            </li>
-          </ul>
-          <div class="service-preview">
-            <img src="img/pint_01.webp" alt="High-fidelity visual preview" loading="lazy" decoding="async">
-            <img src="img/mia_01.webp" alt="High-fidelity visual preview" loading="lazy" decoding="async">
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-glow"></div>
-          <div class="service-header">
-            <div class="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="7" width="20" height="14" rx="2"/>
-                <path d="M16 3H8L6 7h12z"/>
-              </svg>
-            </div>
-          </div>
-          <h3>Poster &amp; Brand Visuals</h3>
-          <p>Event posters, social media creatives, and brand identity visuals that stop the scroll.</p>
-          <ul class="service-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Social media creatives
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Event & launch posters
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Brand identity kits
-            </li>
-          </ul>
-          <div class="service-preview">
-            <img src="img/pint_04.webp" alt="Poster preview" loading="lazy" decoding="async">
-            <img src="img/pint_05.webp" alt="Brand visual preview" loading="lazy" decoding="async">
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-glow"></div>
-          <div class="service-header">
-            <div class="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-              </svg>
-            </div>
-          </div>
-          <h3>Website Development</h3>
-          <p>Fast, modern websites built with clean code. From landing pages to full product sites.</p>
-          <ul class="service-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Responsive design
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              SEO optimized
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Lightning fast
-            </li>
-          </ul>
-          <div class="service-preview">
-            <img src="assets/resort-lake-view.jpg" alt="Web dev preview" loading="lazy" decoding="async">
-            <img src="assets/excellence-academy.jpg" alt="Web dev preview" loading="lazy" decoding="async">
-          </div>
-        </div>
-
-        <div class="service-card">
-          <div class="service-card-glow"></div>
-          <div class="service-header">
-            <div class="service-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                <line x1="12" y1="22.08" x2="12" y2="12"/>
-              </svg>
-            </div>
-          </div>
-          <h3>AI Automation & Tools</h3>
-          <p>Streamline your workflow with custom AI agents, automated pipelines, and bespoke internal tools.</p>
-          <ul class="service-features">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Workflow Automation
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Custom AI Solutions
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              Internal SaaS Tools
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Web Projects Showcase ─── -->
-  <section id="web-projects" class="reveal">
-    <div class="projects-inner">
-      <span class="section-label">WEB PROJECTS</span>
-      <h2 class="projects-heading">Websites I've Built</h2>
-      <div class="projects-grid">
-
-        <a href="https://demo-dun-ten-90.vercel.app/" class="project-card" target="_blank" rel="noopener">
-          <div class="project-thumb">
-            <img src="assets/resort-lake-view.jpg" alt="Resort Lake View — luxury resort website" width="1024" height="500" loading="lazy" decoding="async">
-            <div class="project-thumb-overlay">
-              <span class="project-view-btn">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-number">01</span>
-            <h3>Resort Lake View</h3>
-            <p>Luxury resort website with booking system, weather widget, and immersive full-screen gallery.</p>
-            <div class="project-tags">
-              <span>Hospitality</span>
-              <span>Booking</span>
-              <span>Full-Stack</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://edu-bay-one.vercel.app/" class="project-card" target="_blank" rel="noopener">
-          <div class="project-thumb">
-            <img src="assets/excellence-academy.jpg" alt="Excellence Academy — coaching institute website" width="1024" height="500" loading="lazy" decoding="async">
-            <div class="project-thumb-overlay">
-              <span class="project-view-btn">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-number">02</span>
-            <h3>Excellence Academy</h3>
-            <p>Coaching institute website for NEET & JEE prep with course listings, faculty profiles, and results showcase.</p>
-            <div class="project-tags">
-              <span>Education</span>
-              <span>Lead Gen</span>
-              <span>Responsive</span>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://gy-m-sigma.vercel.app/" class="project-card" target="_blank" rel="noopener">
-          <div class="project-thumb">
-            <img src="assets/muscle-warrior.jpg" alt="Muscle Warrior Gym — fitness website" width="1024" height="500" loading="lazy" decoding="async">
-            <div class="project-thumb-overlay">
-              <span class="project-view-btn">View Project →</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <span class="project-number">03</span>
-            <h3>Muscle Warrior Gym</h3>
-            <p>Bold fitness brand site with WhatsApp integration, pricing plans, and dynamic gallery.</p>
-            <div class="project-tags">
-              <span>Fitness</span>
-              <span>Branding</span>
-              <span>WhatsApp API</span>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Contact ─── -->
+    <!-- ─── Contact ─── -->
   <section id="contact" class="reveal">
     <div class="contact-inner">
       <div class="contact-left">
-        <span class="section-label">CONTACT</span>
+        <span class="section-label">GET IN TOUCH</span>
         <h2 class="contact-h2">Let's build<br>something real.</h2>
-        <p class="contact-sub">Tell me what you need — I'll tell you what's possible.</p>
+        <p class="contact-sub">I'm Asmit Rawat—based in Dehradun and graduating BCA in 2026. Whether you need a web app built at light speed or AI product shots for your store, let's talk!</p>
         <div class="contact-info-cards">
           <div class="contact-info-card">
             <div class="contact-info-icon">
@@ -354,11 +357,20 @@
           </div>
           <div class="contact-info-card">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <span class="contact-info-label">Instagram</span>
-              <a href="https://instagram.com/comingsoon" target="_blank" rel="noopener" class="contact-info-value">@comingsoon</a>
+              <span class="contact-info-label">Location</span>
+              <span class="contact-info-value">Dehradun, India • BCA '26</span>
+            </div>
+          </div>
+          <div class="contact-info-card">
+            <div class="contact-info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <span class="contact-info-label">GitHub</span>
+              <a href="https://github.com/asmit260" target="_blank" rel="noopener" class="contact-info-value">github.com/asmit260</a>
             </div>
           </div>
         </div>
@@ -374,19 +386,18 @@
             <input type="email" id="contact-email" name="email" placeholder="you@example.com" required>
           </div>
           <div class="form-group">
-            <label for="contact-service">Service</label>
+            <label for="contact-service">How can I help you?</label>
             <select id="contact-service" name="service">
               <option value="" disabled selected>What do you need?</option>
-              <option value="digital-visuals">Digital Visual Creation</option>
-              <option value="posters">Poster & Brand Visuals</option>
-              <option value="website">Website Development</option>
-              <option value="ai-automation">AI Automation & Tools</option>
-              <option value="other">Something else</option>
+              <option value="vibecoding-web">Vibecoding &amp; Web App Development</option>
+              <option value="ai-product-images">AI Product Photography &amp; Visuals</option>
+              <option value="prompt-engineering">Prompt Engineering &amp; Automation</option>
+              <option value="other">Something else / Just saying hi</option>
             </select>
           </div>
           <div class="form-group">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+            <textarea id="contact-message" name="message" rows="4" placeholder="Tell me about your project or idea..." required></textarea>
           </div>
           <button type="submit" class="form-submit" id="contact-submit">
             <span>Send Message</span>
@@ -397,16 +408,19 @@
     </div>
   </section>
 
-  <!-- ─── Footer ─── -->
+
+    <!-- ─── Footer ─── -->
   <footer>
     <div class="footer-inner">
-      <span>© 2025 FXL STUDIO</span>
+      <span>© 2025 Asmit Rawat • Built with Vibecoding &amp; AI</span>
       <div class="footer-links">
+        <a href="https://github.com/asmit260" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:asmitrawat360@gmail.com">Email</a>
         <a href="https://instagram.com/comingsoon" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://behance.net/YOURHANDLE" target="_blank" rel="noopener">Behance</a>
       </div>
     </div>
   </footer>
+
 
   <script src="main.js" defer></script>
 </body>

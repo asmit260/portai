@@ -12,15 +12,15 @@
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  // ── Stars — reduce count on mobile for performance ──
-  const STAR_COUNT = isMobile ? 100 : 300;
+  // ── Stars — lightweight count for silky 60 FPS ──
+  const STAR_COUNT = isMobile ? 50 : 120;
   const stars = Array.from({ length: STAR_COUNT }, () => ({
     x:  Math.random() * canvas.width,
     y:  Math.random() * canvas.height,
-    r:  Math.random() * 1.4 + 0.2,
+    r:  Math.random() * 1.3 + 0.3,
     o:  Math.random() * 0.7 + 0.3,
-    vx: (Math.random() - 0.5) * 0.25,
-    vy: (Math.random() - 0.5) * 0.25,
+    vx: (Math.random() - 0.5) * 0.2,
+    vy: (Math.random() - 0.5) * 0.2,
     ts: Math.random() * 0.008 + 0.003,
     td: Math.random() > 0.5 ? 1 : -1,
   }));
@@ -53,43 +53,13 @@
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // ── Milky Way — skip on mobile for perf ──
-    if (!isMobile) {
-      const milkyWay = ctx.createLinearGradient(
-        0, canvas.height * 0.15,
-        canvas.width, canvas.height * 0.85
-      );
-      milkyWay.addColorStop(0,    'rgba(255,255,255,0)');
-      milkyWay.addColorStop(0.25, 'rgba(180,200,255,0.015)');
-      milkyWay.addColorStop(0.4,  'rgba(160,190,255,0.045)');
-      milkyWay.addColorStop(0.5,  'rgba(200,215,255,0.06)');
-      milkyWay.addColorStop(0.6,  'rgba(160,190,255,0.045)');
-      milkyWay.addColorStop(0.75, 'rgba(180,200,255,0.015)');
-      milkyWay.addColorStop(1,    'rgba(255,255,255,0)');
-      ctx.fillStyle = milkyWay;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.save();
-      ctx.translate(canvas.width * 0.5, canvas.height * 0.5);
-      ctx.rotate(-0.45);
-      const innerGlow = ctx.createRadialGradient(0, 0, 0, 0, 0, canvas.width * 0.5);
-      innerGlow.addColorStop(0, 'rgba(168,200,255,0.04)');
-      innerGlow.addColorStop(0.4, 'rgba(140,180,255,0.02)');
-      innerGlow.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.fillStyle = innerGlow;
-      ctx.fillRect(-canvas.width, -canvas.height * 0.15, canvas.width * 2, canvas.height * 0.3);
-      ctx.restore();
-    }
-
-    // ── Draw Stars ──
+    // ── Draw Stars (using hardware-accelerated fillRect instead of arc paths) ──
     stars.forEach(s => {
       s.o += s.ts * s.td;
       if (s.o > 1 || s.o < 0.2) s.td *= -1;
 
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(255,255,255,${s.o})`;
-      ctx.fill();
+      ctx.fillRect(s.x, s.y, s.r * 1.5, s.r * 1.5);
 
       s.x += s.vx;
       s.y += s.vy;
@@ -198,9 +168,9 @@ const lb = document.createElement('div');
 lb.id = 'lightbox';
 lb.innerHTML = `
   <div class="lb-backdrop"></div>
-  <button class="lb-close">✕</button>
-  <button class="lb-prev">‹</button>
-  <button class="lb-next">›</button>
+  <button class="lb-close" aria-label="Close lightbox">✕</button>
+  <button class="lb-prev" aria-label="Previous image">‹</button>
+  <button class="lb-next" aria-label="Next image">›</button>
   <img class="lb-img" src="" alt="">
 `;
 document.body.appendChild(lb);
@@ -275,7 +245,7 @@ if (contactForm) {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\nService: ${service || 'Not specified'}\n\n${message}`
     );
-    window.location.href = `mailto:hello@fxlstudio.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:asmitrawat360@gmail.com?subject=${subject}&body=${body}`;
 
     const btn = document.getElementById('contact-submit');
     btn.querySelector('span').textContent = 'Opening Mail App…';

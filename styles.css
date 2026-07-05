@@ -22,7 +22,10 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background: radial-gradient(circle at 50% 40%, rgba(168, 200, 255, 0.06) 0%, rgba(10, 10, 10, 0.95) 60%, #000000 100%),
+              linear-gradient(135deg, #000000 0%, rgba(180, 200, 255, 0.03) 50%, #000000 100%);
+  background-color: #000000;
+  background-attachment: fixed;
   color: var(--text);
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
@@ -115,6 +118,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 80px;
   margin-bottom: var(--space-xl);
 }
 .hero-content { position: relative; z-index: 10; text-align: center; padding: 0 var(--space-lg); }
@@ -161,7 +165,7 @@ body {
 .gallery-disclaimer { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; opacity: 0.8; }
 .gallery-grid { columns: 3; column-gap: 12px; }
 @media (max-width: 1023px) { .gallery-grid { columns: 2; } }
-@media (max-width: 640px)  {
+@media (max-width: 768px)  {
   .gallery-grid { columns: 2; column-gap: 8px; }
   .gallery-card { margin-bottom: 8px; border-radius: 8px; }
 }
@@ -257,7 +261,7 @@ body {
 }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
 @media (max-width: 1023px) { .services-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 640px)  { .services-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px)  { .services-grid { grid-template-columns: 1fr; } }
 
 .service-card {
   position: relative;
@@ -354,9 +358,17 @@ body {
   line-height: 1.1;
   margin-bottom: var(--space-xl);
 }
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 720px;
+  line-height: 1.65;
+  margin-top: -1.2rem;
+  margin-bottom: var(--space-xl);
+}
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xl); }
 @media (max-width: 1023px) { .projects-grid { grid-template-columns: 1fr 1fr; gap: var(--space-lg); } }
-@media (max-width: 640px)  { .projects-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px)  { .projects-grid { grid-template-columns: 1fr; } }
 
 .project-card {
   text-decoration: none;
@@ -540,7 +552,7 @@ footer span { color: var(--text-muted); font-size: 0.85rem; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
 /* ─── Mobile Spacing Overrides ─── */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   #gallery, #services, #web-projects, #contact { padding-left: 16px; padding-right: 16px; }
   #cta-banner { padding: var(--space-lg) 16px; }
   .hero-content { padding: 0 20px; }
